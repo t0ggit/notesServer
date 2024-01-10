@@ -54,13 +54,13 @@ func (ns *NotesService) Close() error {
 // handleCreateNote обрабатывает запрос на создание записи
 /*
 Запрос должен быть с методом POST и с содержимым в формате JSON следующего вида:
-{"name": "Имя", "last_name": "Фамилия", "note": "Содержимое заметки"}
+  {"name": "Имя", "last_name": "Фамилия", "note": "Содержимое заметки"}
 
 Возвращает клиенту ответ с содержимым в формате JSON следующего вида:
-{"result": "OK", "data": {"id": 1}, "error": ""}
+  {"result": "OK", "data": {"id": 1}, "error": ""}
 
 В случае ошибки:
-{"result": "ERROR", "data": null, "error": "error description"}
+  {"result": "ERROR", "data": null, "error": "error description"}
 */
 func (ns *NotesService) handleCreateNote(w http.ResponseWriter, req *http.Request) {
 	setHttpHeaders(w)
@@ -135,13 +135,13 @@ func (ns *NotesService) handleCreateNote(w http.ResponseWriter, req *http.Reques
 // handleGetNote обрабатывает запрос на получение одной записи
 /*
 Запрос должен быть с методом POST и с содержимым в формате JSON следующего вида:
-{"id": 1}
+  {"id": 1}
 
 Возвращает клиенту ответ с содержимым в формате JSON следующего вида:
-{"result": "OK", "data": {"id": 1, "name": "Имя", "last_name": "Фамилия", "note": "Содержимое заметки"}, "error": ""}
+  {"result": "OK", "data": {"id": 1, "name": "Имя", "last_name": "Фамилия", "note": "Содержимое заметки"}, "error": ""}
 
 В случае ошибки:
-{"result": "ERROR", "data": null, "error": "error description"}
+  {"result": "ERROR", "data": null, "error": "error description"}
 */
 func (ns *NotesService) handleGetNote(w http.ResponseWriter, req *http.Request) {
 	setHttpHeaders(w)
@@ -218,13 +218,13 @@ func (ns *NotesService) handleGetNote(w http.ResponseWriter, req *http.Request) 
 // handleUpdateNote обрабатывает запрос на обновлениe записи
 /*
 Запрос должен быть с методом POST и с содержимым в формате JSON следующего вида:
-{"id": 1, "name": "Имя", "last_name": "Фамилия", "note": "Содержимое заметки"}
+  {"id": 1, "name": "Имя", "last_name": "Фамилия", "note": "Содержимое заметки"}
 
 Возвращает клиенту ответ с содержимым в формате JSON следующего вида:
-{"result": "OK", "data": null, "error": ""}
+  {"result": "OK", "data": null, "error": ""}
 
 В случае ошибки: (например, запись с таким ID не существует)
-{"result": "ERROR", "data": null, "error": "error description"}
+  {"result": "ERROR", "data": null, "error": "error description"}
 */
 func (ns *NotesService) handleUpdateNote(w http.ResponseWriter, req *http.Request) {
 	setHttpHeaders(w)
@@ -293,13 +293,13 @@ func (ns *NotesService) handleUpdateNote(w http.ResponseWriter, req *http.Reques
 // handleDeleteNoteByID обрабатывает запрос на удаление записи
 /*
 Запрос должен быть с методом POST и с содержимым в формате JSON следующего вида:
-{"id": 1}
+  {"id": 1}
 
 Возвращает клиенту ответ с содержимым в формате JSON следующего вида:
-{"result": "OK", "data": null, "error": ""}
+  {"result": "OK", "data": null, "error": ""}
 
 В случае ошибки: (например, удаление несуществующей записи)
-{"result": "ERROR", "data": null, "error": "error description"}
+  {"result": "ERROR", "data": null, "error": "error description"}
 */
 func (ns *NotesService) handleDeleteNoteByID(w http.ResponseWriter, req *http.Request) {
 	setHttpHeaders(w)
@@ -367,13 +367,13 @@ func (ns *NotesService) handleDeleteNoteByID(w http.ResponseWriter, req *http.Re
 Запрос должен быть с методом GET. Тело запроса игнорируется.
 
 Возвращает клиенту ответ с содержимым в формате JSON следующего вида:
-{"result": "OK", "data": [
-{"id": 1, "name": "Иванов", "last_name": "Иван", "note": "Привет, друг!"},
-{"id": 2, "name": "Петров", "last_name": "Петр", "note": "Привет, друг!"}
-], "error": ""}
+  {"result": "OK", "data": [
+  {"id": 1, "name": "Иванов", "last_name": "Иван", "note": "Привет, друг!"},
+  {"id": 2, "name": "Петров", "last_name": "Петр", "note": "Привет, друг!"}
+  ], "error": ""}
 
 В случае ошибки:
-{"result": "ERROR", "data": null, "error": "error description"}
+  {"result": "ERROR", "data": null, "error": "error description"}
 */
 func (ns *NotesService) handleGetAllNotes(w http.ResponseWriter, req *http.Request) {
 	setHttpHeaders(w)
